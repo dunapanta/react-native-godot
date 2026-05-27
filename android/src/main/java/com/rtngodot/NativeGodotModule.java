@@ -49,6 +49,7 @@ public class NativeGodotModule extends NativeGodotModuleSpec {
 
 	public NativeGodotModule(ReactApplicationContext context) {
 		super(context);
+		RTNLibGodot.getInstance().init(context.getCurrentActivity());
 		CallInvokerHolderImpl holder =
 				(CallInvokerHolderImpl)context.getCatalystInstance().getJSCallInvokerHolder();
 		mHybridData = initHybrid(

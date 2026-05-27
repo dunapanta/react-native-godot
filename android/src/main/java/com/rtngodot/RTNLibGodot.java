@@ -400,6 +400,7 @@ public class RTNLibGodot implements IGodotLib, GodotHost, GodotRenderView {
 			try (SurfaceControl.Transaction t = new SurfaceControl.Transaction()) {
 				// Set new parent
 				t.reparent(wsData.control, control);
+				t.setLayer(wsData.control, 1);
 				t.setVisibility(wsData.control, true);
 				if (wsData.width != width || wsData.height != height) {
 					t.setBufferSize(wsData.control, width, height);
